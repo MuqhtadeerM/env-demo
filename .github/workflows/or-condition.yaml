@@ -1,0 +1,9 @@
+name: Or Condition
+on: push
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run for hari or javeed
+        if: github.actor == 'Hari' || github.actor == 'javied'
+        run: echo "it is running the either hari or javeid"
