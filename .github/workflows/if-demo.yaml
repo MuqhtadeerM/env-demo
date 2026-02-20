@@ -3,14 +3,13 @@ on:
   push:
     branches:
       - main
-      - dev
+      - develop
 jobs:
   demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Run this step
+      - name: Run if the branch is main
         if: github.ref == 'refs/heads/main' 
-        run: echo "Running this steps"
+        run: echo "Running this steps main branch"
       - name: run  this step
-        if: github.ref == 'refs/heads/main'
         run: echo "runing this steps"
