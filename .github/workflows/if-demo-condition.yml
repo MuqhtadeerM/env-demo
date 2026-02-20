@@ -1,17 +1,22 @@
-name: If Demo condition
-on: 
+name: If Demo
+
+on:
   push:
     branches:
       - main
       - develop
+
 jobs:
   demo:
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout repository
-        run: actions/checkout@v4
-      - name: Run if the branch is main/master
-        if: github.ref_name == 'master' 
-        run: echo "Running this steps main branch"
-      - name: run  this step
-        run: echo "runing this steps"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run if the branch is main
+        if: github.ref == 'refs/heads/main'
+        run: echo "Running this step on main branch"
+
+      - name: Run on all configured branches
+        run: echo "Running this step"
