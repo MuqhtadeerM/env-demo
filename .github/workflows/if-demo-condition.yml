@@ -1,4 +1,4 @@
-name: If Demo
+name: If Demo condition
 on: 
   push:
     branches:
